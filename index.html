@@ -49,28 +49,28 @@ Run the sample project for a simple example.</p>
 
 <p>Do this to setup a simple flare:</p>
 
-<pre><code>self.blinker = [[PDCBlinker alloc] initWithFlareCount:1
-                                             cropSize:self.view.bounds.size
-                                      backgroundImage:[self someCoreImage]];
-self.blinker.delegate = self;
-[self.blinker startFlares];
-</code></pre>
+<div class="highlight"><pre><span class="n">self</span><span class="p">.</span><span class="n">blinker</span> <span class="o">=</span> <span class="p">[[</span><span class="n">PDCBlinker</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithFlareCount:</span><span class="mi">1</span>
+                                             <span class="nl">cropSize:</span><span class="n">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">bounds</span><span class="p">.</span><span class="n">size</span>
+                                      <span class="nl">backgroundImage:</span><span class="p">[</span><span class="n">self</span> <span class="n">someCoreImage</span><span class="p">]];</span>
+<span class="n">self</span><span class="p">.</span><span class="n">blinker</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
+<span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">blinker</span> <span class="n">startFlares</span><span class="p">];</span>
+</pre></div>
 
 <p>You also need to implement the required delegate method:</p>
 
-<pre><code>- (void)blinker:(PDCBlinker *)blinker updatedImage:(UIImage *)image
-{
-    self.imageView.image = image;
-}
-</code></pre>
+<div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">blinker:</span><span class="p">(</span><span class="n">PDCBlinker</span> <span class="o">*</span><span class="p">)</span><span class="nv">blinker</span> <span class="nf">updatedImage:</span><span class="p">(</span><span class="n">UIImage</span> <span class="o">*</span><span class="p">)</span><span class="nv">image</span>
+<span class="p">{</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">imageView</span><span class="p">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 
 <p>But, this delegate method is optional:</p>
 
-<pre><code>- (void)blinker:(PDCBlinker *)blinker willConfigureFlare:(PDCFlare *)flare atIndex:(NSUInteger)index
-{
-    \\ Customize the flare here.
-}
-</code></pre>
+<div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">blinker:</span><span class="p">(</span><span class="n">PDCBlinker</span> <span class="o">*</span><span class="p">)</span><span class="nv">blinker</span> <span class="nf">willConfigureFlare:</span><span class="p">(</span><span class="n">PDCFlare</span> <span class="o">*</span><span class="p">)</span><span class="nv">flare</span> <span class="nf">atIndex:</span><span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="nv">index</span>
+<span class="p">{</span>
+    <span class="err">\\</span> <span class="n">Customize</span> <span class="n">the</span> <span class="n">flare</span> <span class="n">here</span><span class="p">.</span>
+<span class="p">}</span>
+</pre></div>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/mudphone">mudphone</a></p>
