@@ -11,6 +11,11 @@ A super-lightweight class for saving lensflare metadata (Yes, it could/should pr
 - PDCResolution.h/m  
 A class which detects screen size, scale, dimensions.
 
+Setup
+-----
+Check out the included sample project (blinker.xcodeproj), as all requirements and setup code is included.  
+Run the sample project for a simple example.
+
 How do I use it?
 ----------------
 Do this to setup a simple flare:
