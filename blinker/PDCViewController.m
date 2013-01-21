@@ -71,6 +71,7 @@
 
 - (void)blinker:(PDCBlinker *)blinker willConfigureFlare:(PDCFlare *)flare atIndex:(NSUInteger)index
 {
+    // Customize the second flare (the first one is at the default location with default size):
     if (index==1) {
         flare.center = CGPointMake(200.0f, 200.0f);
         flare.maximumRadius *= 1.5f;
