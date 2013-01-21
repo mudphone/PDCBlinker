@@ -7,9 +7,13 @@
 //
 
 @class PDCBlinker;
+#import "PDCFlare.h"
 
 @protocol PDCBlinkerDelegate <NSObject>
 
 - (void)blinker:(PDCBlinker *)blinker updatedImage:(UIImage *)image;
+
+@optional
+- (void)blinker:(PDCBlinker *)blinker willConfigureFlare:(PDCFlare *)flare atIndex:(NSUInteger)index;
 
 @end

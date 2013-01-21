@@ -8,7 +8,6 @@
 
 #import "PDCBlinker.h"
 #import "PDCCurves.h"
-#import "PDCFlare.h"
 #import "PDCResolution.h"
 
 
@@ -77,9 +76,8 @@
         flare.delegate = self;
         
         // Position the flares:
-        if (i==1) {
-            flare.center = CGPointMake(200.0f, 200.0f);
-            flare.maximumRadius *= 1.5f;
+        if (self.delegate!=nil && [self.delegate respondsToSelector:@selector(blinker:willConfigureFlare:atIndex:)]) {
+            [self.delegate blinker:self willConfigureFlare:flare atIndex:i];
         }
         
         [self.flares addObject:flare];
