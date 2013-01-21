@@ -27,13 +27,16 @@ self.blinker.delegate = self;
 [self.blinker startFlares];
 ```
 
-You also need to implement some delegate methods:
+You also need to implement the required delegate method:
 ```
 - (void)blinker:(PDCBlinker *)blinker updatedImage:(UIImage *)image
 {
     self.imageView.image = image;
 }
-
+```
+  
+But, this delegate method is optional:
+```
 - (void)blinker:(PDCBlinker *)blinker willConfigureFlare:(PDCFlare *)flare atIndex:(NSUInteger)index
 {
 	\\ Customize the flare here.
